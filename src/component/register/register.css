@@ -1,0 +1,152 @@
+/* Background and Layout */
+.register-body {
+  background-image: url(../Dashboard/image/jeni.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Main Container */
+.register-main {
+  width: 480px;
+  background-color: rgba(255, 255, 255, 0.97);
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.register-main h1 {
+  margin-bottom: 20px;
+  color: #222;
+  font-size: 26px;
+}
+
+/* Camera Wrapper */
+.camera-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+  width: 360px;
+  height: 270px;
+}
+
+video,
+canvas {
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+}
+
+/* Overlay Border */
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 12px;
+  border: 3px solid red; /* Green when live face detected */
+  transition: border 0.3s ease;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Buttons */
+.register-main button {
+  margin: 10px 5px;
+  padding: 10px 22px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.register-main button:hover:enabled {
+  background-color: #0c7cd5;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.register-main button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+/* Progress Bar */
+.progress-bar-wrapper {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+}
+
+.progress-bar-bg {
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  height: 14px;
+  overflow: hidden;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.progress-bar-fill {
+  background-color: #4caf50;
+  height: 100%;
+  transition: width 0.5s ease;
+  width: 0%;
+  border-radius: 10px;
+}
+
+/* Spinner Loader */
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #ddd;
+  border-top-color: #0f0;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 30px auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Message */
+.register-main p {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #f57c00;
+  font-weight: 500;
+}
+
+/* Mobile View */
+@media screen and (max-width: 600px) {
+  .register-main {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .camera-wrapper {
+    width: 100%;
+    height: auto;
+  }
+
+  video,
+  canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
